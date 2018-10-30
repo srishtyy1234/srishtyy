@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SignUp</title>
+		<link href="signup.css" rel="stylesheet" type="text/css">
+		<script src="jquery.js"></script>
+		<script>
+			function checkForm(){
+			var Fname=document.forms["regno"]["fname"];
+			var Lname=document.forms["regno"]["lname"];
+			var Email=document.forms["regno"]["email"];
+			var ph=document.forms["regno"]["num"];
+			var password=document.forms["regno"]["Password"];
+			if(Email.value.indexOf("@",0)<0)
+			{
+				alert("@ symbol missing");
+				return false;
+			}
+			 if(ph.value == "")
+			{
+				alert("phone number field is blank");
+				return false;
+			}
+			 if(password.value == "")
+			{
+				alert("please Enter Your Password");
+				return false;
+			}
+			alert("form submitted");
+			return true;
+		}
+	</script>
+</head>
+	<body >
+		<div class="simple-form">
+			<form class="registration" onsubmit="return checkForm()" action="home.html" method="post" name="regno" >
+				<h2>Sign-Up Form</h2>
+				<input type="text" name="fname" id="button" placeholder="Enter Your FirstName" required><br><br>        
+				<input type="text" name="lname" id="button" placeholder="Enter Your LastName" required><br><br> 
+				<input type="email" name="email" id="button" placeholder="Enter Your EmailId" required><br><br> 
+				<input type="password" name="Password" id="button" placeholder="Enter Your Password" required><br><br>
+				<select type="text" id="phone"><option>+91</option></select>		
+				<input type="number" name="num" id="ph" placeholder="Enter Your PhoneNumber" required><br><br>		
+				<input type="radio" name="gender" id="rd"><span id="but">Male</span><input type="radio" name="gender" id="rd"><span id="but">Female</span><br><br>
+				<a href="index.html"><input type="submit" value="SignUp" id="butt"></a>         
+			</form>
+		</div>
+	</body>
+</html>
